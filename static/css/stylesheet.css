@@ -11,7 +11,10 @@ body {
   white-space: nowrap;
 }
 
-.quotes {display: none;}
+.quotes {
+  display: none;
+  white-space: nowrap;
+  }
 
 #search {
 

@@ -13,4 +13,11 @@ $(function() {
 
     showNextQuote();
 
-})();
+});
+
+$(document).keydown(function(e) {
+    if(e.keyCode == 13)
+        $(".centered").animate({
+            top: '10%'
+        }, 600);
+});
