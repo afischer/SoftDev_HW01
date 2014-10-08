@@ -8,13 +8,19 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  overflow:auto;
   white-space: nowrap;
 }
 
 .quotes {
-  display: none;
+  display: inline-block;
   white-space: nowrap;
   }
+
+
+.prettytext{
+    font-weight:normal;color:#636363;letter-spacing:1pt;word-spacing:1pt;font-size:39px;text-align:left;font-family:helvetica, sans-serif;line-height:2;
+}
 
 #search {
 
@@ -26,6 +32,7 @@ body {
     font: bold 12px Arial,Helvetica,Sans-serif;
     color: #bebebe;
     width: 150px;
+    outline: none;
     padding: 6px 15px 6px 35px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
