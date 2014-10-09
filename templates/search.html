@@ -10,23 +10,26 @@
 
 <body>
 
+<div class="prettytext">
   <div class="centered">
     <form class="search" action="#" id="search">
       <nobr>
-      Who
-      <div class="quotes"> is </div>
-      <div class="quotes"> was </div>
-      <div class="quotes"> played </div>
-      <div class="quotes"> are </div>
-      <div class="quotes"> will be </div>
-      <div class="quotes"> portrayed </div>
-      <div class="quotes"> depicted </div>
-</nobr>
+	Who
+	<div class="quotes" style="display: none;"> is </div>
+	<div class="quotes" style="display: none;"> was </div>
+	<div class="quotes" style="display: none;"> played </div>
+	<div class="quotes" style="display: none;"> are </div>
+	<div class="quotes" style="display: none;"> will be </div>
+	<div class="quotes" style="display: none;"> portrayed </div>
+	<div class="quotes" style="display: none;"> depicted </div>
+      </nobr>
 
-      <input name="searchbox" type="text" size="40" placeholder="Search..." />
+      
+      <input name="searchbox" id="sbox" type="text" size="40" placeholder={{SearchPlaceholder}} />
     </form>
   </div>
-
-
+</div>
+  
+  
 </body>
 </html>

@@ -6,7 +6,9 @@ app = Flask(__name__)
 
 @app.route("/", methods=['GET', 'POST'])
 def home():
-    return render_template("search.html")
+    return render_template("search.html",
+                           SearchPlaceholder="Search..."
+                           )
 
 
 
