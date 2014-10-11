@@ -1,16 +1,23 @@
 import google
 from google import search
-import urllib2
+import urllib 
 from bs4 import BeautifulSoup
+from sgmllib import SGMLParser
 
 r = []
-for url in search("who played batman?", tld="com", num = 30, pause=0):
+for url in search("who played batman?", tld='com', lang='en', stop = 10):
     r.append(url)
-html = []
-for x in r:
-    response = urllib2.urlopen(x)
-    print response.info()
-   # soup = BeautifulSoup(response)
-    #print(soup.prettify())
+
+
+#html = []
+#for x in r:
+
+sock = urllib.urlopen("http://www.biography.com/people/groups/actors-who-played-batman") 
+htmlSource = sock.read()  
+sock.close()       
+print htmlSource     
+    
+
+
     
     
