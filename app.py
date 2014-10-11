@@ -6,10 +6,26 @@ app = Flask(__name__)
 
 @app.route("/", methods=['GET', 'POST'])
 def home():
+    lastSearch = ""
+    searchTerm = request.args.get("searchbox",None)
+
+    if searchTerm != "":
+        lastSearch = searchTerm
     return render_template("search.html",
-                           SearchPlaceholder="Search..."
+                           lastSearch=lastSearch,
                            )
 
+
+@app.route("/results", methods=['GET', 'POST'])
+def results():
+    lastSearch = ""
+    searchTerm = request.args.get("searchbox",None)
+
+    if searchTerm != "":
+        lastSearch = searchTerm
+    return render_template("results.html",
+                           SearchPlaceholder=searchTerm,
+                           )
 
 
 

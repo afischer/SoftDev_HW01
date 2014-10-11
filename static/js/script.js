@@ -15,9 +15,20 @@ $(function() {
 
 });
 
-$(document).keydown(function(e) {
-    if(e.keyCode == 13)
-        $(".centered").animate({
-            top: '10%'
-        }, 600);
-});
+// $(document).keydown(function(e) {
+//     if(e.keyCode == 1)
+//         $(".centered").animate({
+//             top: '10%'
+//         }, 600);
+// });
+
+
+$(document).keyup(function (e) {
+  $(".centered").animate({
+    top: '10%'
+  }, 500);
+
+  if (e.keyCode == 13) {
+      //idk maybe do something cool
+   }
+})

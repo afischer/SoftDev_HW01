@@ -12,6 +12,16 @@ body {
   white-space: nowrap;
 }
 
+
+.top {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow:auto;
+  white-space: nowrap;
+}
+
 .quotes {
   display: inline-block;
   white-space: nowrap;
