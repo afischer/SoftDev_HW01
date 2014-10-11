@@ -8,26 +8,21 @@ r = []
 for url in search("who played batman?", tld='com', lang='en', stop = 10):
     r.append(url)
 
+def txt(r):
+    for x in r:
+        url = x
+        html = urllib.urlopen(url).read()
+        soup = BeautifulSoup(html)
+        for script in soup(["script", "style","meta", "li"]):
+            script.extract()    # rip it out
+        text = soup.get_text()
+        lines = (line.strip() for line in text.splitlines())
+        chunks = (phrase.strip() for line in lines for phrase in line.split("  "))
+        text = '\n'.join(chunk for chunk in chunks if chunk)
+        print text.encode('utf-8')
 
-url = r[0]
-html = urllib.urlopen(url).read()
-soup = BeautifulSoup(html)
 
-# kill all script and style elements
-for script in soup(["script", "style"]):
-    script.extract()    # rip it out
-
-# get text
-text = soup.get_text()
-
-# break into lines and remove leading and trailing space on each
-lines = (line.strip() for line in text.splitlines())
-# break multi-headlines into a line each
-chunks = (phrase.strip() for line in lines for phrase in line.split("  "))
-# drop blank lines
-text = '\n'.join(chunk for chunk in chunks if chunk)
-
-print(text.encode('utf-8'))
+txt(r)
 
 
 
