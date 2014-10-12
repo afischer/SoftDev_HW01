@@ -1,7 +1,9 @@
+import enchant, re, collections, types, urllib
+from bs4 import BeautifulSoup
+
 #name parser, accepts a string or list of strings and returns a counter of the names. Later on I'll
 #probably replace the Counter with something easier to deal with.
 def findNames(text):
-    import enchant, re, collections, types
     names = [ ]
     if isinstance(text, collections.Iterable) and not isinstance(text, types.StringTypes):
         for elem in text:
@@ -16,8 +18,6 @@ def findNames(text):
 
 #quick method to help get text from sites
 def getSites(url):
-    import urllib
-    from bs4 import BeautifulSoup
     bs = BeautifulSoup(urllib.urlopen(url))
     return bs.get_text()
 
