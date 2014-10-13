@@ -19,11 +19,13 @@ def findNames(text, iterating = False):
 
     """
     convert = lambda(lst): sorted(list(Counter(lst).items()), key = itemgetter(1), reverse = True)
+
     if isinstance(text, collections.Iterable) and not isinstance(text, types.StringTypes):
         names = []
         for elem in text:
             names.extend(findNames(elem, iterating = True))
         return convert(names)
+
     if isinstance(text, str):
         d = enchant.Dict("en_us")
         pattern = "[^The]((([A-Z][a-z]+)|M([rs]|rs)\.|Dr\.)((\s[A-Z]\.)?\s[A-Z][a-z]+-?[A-Z]?[a-z]+)+)"
@@ -33,6 +35,7 @@ def findNames(text, iterating = False):
         if iterating:
             return nameList
         return convert(nameList)
+
     raise TypeError("Input must a string or an iterable object composed of strings.")
 
     

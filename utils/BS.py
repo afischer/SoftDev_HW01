@@ -3,11 +3,9 @@ from google import search
 import urllib
 from bs4 import BeautifulSoup
 
-### Yo this is a mess.
-
 r = []
 for url in search("who played batman?", tld='com', lang='en', stop = 10):
-    r.append(url)
+    r.append(url) ##gets urls
 
 def txt(r):
     for x in r:
@@ -23,4 +21,4 @@ def txt(r):
     #    print text.encode('utf-8') + "\n_______________________________________________________________________________________\n"
 
 
-txt(r)
+print txt(r)
