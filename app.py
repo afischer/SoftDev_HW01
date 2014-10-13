@@ -1,4 +1,5 @@
 from flask import Flask,render_template,request
+from utils import BS, Parser
 
 
 
@@ -6,14 +7,10 @@ app = Flask(__name__)
 
 @app.route("/", methods=['GET', 'POST'])
 def home():
-    lastSearch = ""
+
     searchTerm = request.args.get("searchbox",None)
 
-    if searchTerm != "":
-        lastSearch = searchTerm
-    return render_template("search.html",
-                           lastSearch=lastSearch,
-                           )
+    return render_template("search.html")
 
 
 @app.route("/results", methods=['GET', 'POST'])
