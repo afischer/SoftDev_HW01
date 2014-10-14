@@ -28,7 +28,6 @@ def txt(question):
         results = findDates(allText)
     else:
         results = altFindNames(allText)
-    
     final = results[0]
     return final
 

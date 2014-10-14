@@ -18,10 +18,12 @@ def results():
     lastSearch = ""
     searchTerm = request.args.get("searchbox",None)
 
+    result = ""
     if searchTerm != "":
         lastSearch = searchTerm
+        result = searchTerm + BS.txt(searchTerm)
     return render_template("results.html",
-                           SearchPlaceholder=searchTerm,
+                           SearchPlaceholder=searchTerm, result = result
                            )
 
 
