@@ -79,6 +79,26 @@ def inDict(name):
             return False
     return True
 
+def findDates (text):
+    dates =  re.findall( "(Jan................|Feb................|Mar................|Apr................|May................|Jun................|Jul................|Sep................|Oct.................|Nov................|Dec................)", text) 
+    count = 0
+    while count < len(dates): #goes through dates to make sure theyre all good
+        date = dates[count]
+        index = len(date) #length of the string
+        done = False
+
+        while index > 0 and not done: #removing excess characters
+            if date[index-1].isdigit():
+                done = True #this should break out of the loop
+            else:
+                date = date[:index-1] #removing the last letter
+            index = index - 1
+
+        dates[count] = date
+        count = count + 1
+            
+    
+    return dates
     
 
 
