@@ -21,7 +21,7 @@ def results():
     result = ""
     if searchTerm != "":
         lastSearch = searchTerm
-        result = searchTerm + BS.txt(searchTerm)
+        result = BS.txt(searchTerm)
     return render_template("results.html",
                            SearchPlaceholder=searchTerm, result = result
                            )
