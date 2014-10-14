@@ -1,0 +1,50 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Who.</title>
+  <link rel="stylesheet" href="static/css/stylesheet.css" />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="static/js/script.js"></script>
+</head>
+
+
+<body>
+
+<div class="prettytext">
+  
+    <form class="search" action="results" id="search">
+      Who
+      <div class="quotes" style="display: none;"> is </div>
+      <div class="quotes" style="display: none;"> was </div>
+      <div class="quotes" style="display: none;"> played </div>
+      <div class="quotes" style="display: none;"> are </div>
+      <div class="quotes" style="display: none;"> will be </div>
+      <div class="quotes" style="display: none;"> portrayed </div>
+      <div class="quotes" style="display: none;"> depicted </div>
+     
+      <input name="searchbox" id="sbox" type="text" size="40" placeholder="Search..." />
+    </form>
+
+</div>
+
+<br>
+<br>
+<br>
+
+
+<div class="prettytext">
+  
+    <form class="search" action="results" id="search">
+      When
+
+      <div class="quotes" style="display: none;"> is </div>
+      <div class="quotes" style="display: none;"> was </div>
+
+      <input name="searchbox" id="sbox" type="text" size="40" placeholder="Search..." />
+    </form>
+
+</div>
+
+
+</body>
+</html>

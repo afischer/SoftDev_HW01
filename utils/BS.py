@@ -32,8 +32,6 @@ def txt(question):
     final = results[0]
     return final
 
-print txt("when was the us founded")
-
 
 
 
